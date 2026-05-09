@@ -128,6 +128,8 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+
+
         .nav-lang-dropdown button {
             display: flex;
             align-items: center;
@@ -167,14 +169,11 @@
 
         #google_translate_element {
             position: fixed;
-            bottom: 10px;
-            right: 10px;
-            z-index: 9998;
-            opacity: 0.3;
-        }
-
-        #google_translate_element:hover {
-            opacity: 1;
+            top: 80px;
+            right: 20px;
+            z-index: 998;
+            opacity: 0;
+            pointer-events: none;
         }
 
         .goog-te-banner-frame.skiptranslate,
@@ -192,18 +191,6 @@
 
         .goog-te-gadget select {
             font-size: 11px !important;
-        }
-
-        #gtranslate-widget-footer .goog-te-gadget {
-            color: #fff !important;
-        }
-
-        #gtranslate-widget-footer .goog-te-gadget select {
-            background: rgba(255,255,255,0.1) !important;
-            color: #fff !important;
-            border: 1px solid rgba(255,255,255,0.2) !important;
-            border-radius: 6px !important;
-            padding: 4px 8px !important;
         }
 
         @keyframes brandBreath {
@@ -1161,43 +1148,100 @@
 
     <!-- PAYMENT MODAL -->
     <div onclick="if(event.target.id==='payment-modal') hidePaymentModal()" id="payment-modal" class="hidden fixed inset-0 bg-black/70 z-[99998] items-center justify-center">
-        <div onclick="event.stopImmediatePropagation()" class="bg-white w-full max-w-lg mx-4 rounded-3xl overflow-hidden shadow-2xl">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white w-full max-w-xl mx-4 rounded-3xl overflow-hidden shadow-2xl">
             <div class="px-8 py-6 border-b bg-zinc-50 flex items-center justify-between">
-                <div class="text-xs uppercase tracking-[0.2em] text-teal-600 font-semibold">UPI Payment</div>
+                <div class="text-xs uppercase tracking-[0.2em] text-teal-600 font-semibold">Payment Options</div>
                 <button onclick="hidePaymentModal()" class="text-4xl leading-none text-zinc-300 hover:text-zinc-500">×</button>
             </div>
-            <div class="p-8 space-y-6 text-center">
-                <div class="text-5xl mb-2">📱</div>
-                <h3 class="text-xl font-semibold text-zinc-900">Pay via UPI</h3>
-                <p class="text-sm text-zinc-500">UPI ID copy karo → App me paste karo → Amount enter karo → Pay karo</p>
+            <div class="p-8">
+                <!-- Tabs -->
+                <div class="flex gap-2 mb-6">
+                    <button onclick="showPaymentTab('qr')" id="tab-qr" class="flex-1 h-11 rounded-2xl bg-zinc-900 text-white text-sm font-semibold transition-all">📱 QR Code</button>
+                    <button onclick="showPaymentTab('mobile')" id="tab-mobile" class="flex-1 h-11 rounded-2xl bg-zinc-100 text-zinc-600 text-sm font-semibold hover:bg-zinc-200 transition-all">📞 Mobile</button>
+                </div>
 
-                <div class="rounded-2xl border-2 border-dashed border-zinc-300 bg-zinc-50 p-6">
-                    <div class="text-xs uppercase tracking-[0.2em] text-zinc-400 mb-3">UPI ID</div>
-                    <code class="text-3xl font-bold text-zinc-900 break-all">7253985468@ybl</code>
-                    <div class="mt-4">
-                        <button onclick="copyUPI()" class="inline-flex items-center gap-2 h-10 px-5 rounded-3xl bg-zinc-900 text-white text-sm font-semibold">
-                            <i class="fa-regular fa-copy"></i>
-                            Copy UPI ID
+                <!-- QR Code Tab -->
+                <div id="payment-qr" class="space-y-5">
+                    <div class="text-center">
+                        <div class="text-4xl mb-2">📱</div>
+                        <h3 class="text-lg font-semibold text-zinc-900">Scan QR to Pay</h3>
+                        <p class="text-xs text-zinc-500 mt-1">PhonePe, Paytm, Google Pay, BHIM se scan karein</p>
+                    </div>
+
+                    <div class="bg-zinc-50 rounded-3xl p-6 border-2 border-dashed border-zinc-300">
+                        <div id="qr-code" class="w-48 h-48 mx-auto bg-white rounded-2xl flex items-center justify-center shadow-inner">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=7253985468@ybl&pn=Pragati%20Sahayak&cu=INR" alt="UPI QR Code" class="w-44 h-44">
+                        </div>
+                        <div class="mt-4 text-center">
+                            <div class="text-xs uppercase tracking-[0.2em] text-zinc-400 mb-2">UPI ID</div>
+                            <code class="text-xl font-bold text-zinc-900">7253985468@ybl</code>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <button onclick="copyUPI()" class="flex-1 h-11 rounded-2xl bg-zinc-100 hover:bg-zinc-200 text-zinc-700 text-sm font-semibold transition-all">
+                            <i class="fa-regular fa-copy mr-2"></i>Copy UPI ID
+                        </button>
+                        <button onclick="openUPIPayment('phonepe')" class="flex-1 h-11 rounded-2xl bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold transition-all">
+                            PhonePe
+                        </button>
+                        <button onclick="openUPIPayment('paytm')" class="flex-1 h-11 rounded-2xl bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold transition-all">
+                            Paytm
                         </button>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-3 gap-3">
-                    <button onclick="openUPIPayment('phonepe')" class="h-12 rounded-3xl bg-purple-600 text-white text-sm font-semibold">PhonePe</button>
-                    <button onclick="openUPIPayment('paytm')" class="h-12 rounded-3xl bg-sky-600 text-white text-sm font-semibold">Paytm</button>
-                    <button onclick="openUPIPayment('upi')" class="h-12 rounded-3xl bg-zinc-900 text-white text-sm font-semibold">UPI</button>
+                <!-- Mobile Number Tab -->
+                <div id="payment-mobile" class="hidden space-y-5">
+                    <div class="text-center">
+                        <div class="text-4xl mb-2">📞</div>
+                        <h3 class="text-lg font-semibold text-zinc-900">Pay via Mobile Number</h3>
+                        <p class="text-xs text-zinc-500 mt-1">UPI app me mobile number daal kar pay karein</p>
+                    </div>
+
+                    <div class="bg-zinc-50 rounded-3xl p-6 border-2 border-dashed border-zinc-300">
+                        <div class="text-xs uppercase tracking-[0.2em] text-zinc-400 mb-3">Mobile Number</div>
+                        <code class="text-3xl font-bold text-zinc-900">+91 72539 85468</code>
+                        <div class="mt-4 flex gap-2">
+                            <button onclick="copyMobile()" class="flex-1 h-11 rounded-2xl bg-zinc-900 text-white text-sm font-semibold">
+                                <i class="fa-regular fa-copy mr-2"></i>Copy Number
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 rounded-2xl p-4 text-left">
+                        <div class="text-sm font-semibold text-blue-900 mb-2">📝 How to Pay:</div>
+                        <ol class="text-xs text-blue-800 space-y-2">
+                            <li>1. PhonePe / Paytm / Google Pay open karein</li>
+                            <li>2. "To Mobile Number" select karein</li>
+                            <li>3. Number enter karein: <strong>7253985468</strong></li>
+                            <li>4. Amount enter karein aur pay karein</li>
+                        </ol>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <button onclick="openUPIPayment('phonepe')" class="flex-1 h-11 rounded-2xl bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold transition-all">
+                            Pay via PhonePe
+                        </button>
+                        <button onclick="openUPIPayment('paytm')" class="flex-1 h-11 rounded-2xl bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold transition-all">
+                            Pay via Paytm
+                        </button>
+                    </div>
                 </div>
 
-                <input id="payment-ref" type="text" placeholder="Transaction ID / UTR (optional)" class="w-full h-12 rounded-3xl border border-zinc-200 px-5 outline-none focus:border-zinc-400 text-sm">
+                <!-- Common Section -->
+                <div class="mt-6 pt-6 border-t border-zinc-200">
+                    <input id="payment-ref" type="text" placeholder="Transaction ID / UTR (optional)" class="w-full h-12 rounded-3xl border border-zinc-200 px-5 outline-none focus:border-zinc-400 text-sm mb-4">
 
-                <div class="text-xs text-zinc-400">
-                    Works with PhonePe, Paytm, Google Pay &amp; BHIM
+                    <button onclick="confirmPaymentOnWhatsApp()" class="w-full h-14 rounded-3xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold flex items-center justify-center gap-3 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Confirm Payment on WhatsApp
+                    </button>
+
+                    <div class="mt-4 text-center text-xs text-zinc-400">
+                        Payment ke baad WhatsApp par confirmation zaroor bhejein
+                    </div>
                 </div>
-
-                <button onclick="confirmPaymentOnWhatsApp()" class="w-full h-14 rounded-3xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold flex items-center justify-center gap-3">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    Confirm on WhatsApp
-                </button>
             </div>
         </div>
     </div>
@@ -1293,10 +1337,6 @@
                     <div class="mt-8 flex gap-x-5 text-2xl">
                         <i onclick="window.open('https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=cnwdm5y','_blank')" class="fa-brands fa-instagram cursor-pointer hover:text-white transition-colors"></i>
                     </div>
-                    <div class="mt-6">
-                        <div class="text-xs uppercase text-white/60 mb-2">Google Translate</div>
-                        <div id="gtranslate-widget-footer"></div>
-                    </div>
                 </div>
                 
                 <div class="col-span-2 md:col-span-1">
@@ -1362,13 +1402,6 @@
     <a href="https://wa.me/917253985468" target="_blank" rel="noreferrer" class="fixed right-6 bottom-6 z-[999] w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-2xl shadow-emerald-500/30 flex items-center justify-center transition-transform hover:scale-105">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
-
-    <!-- FLOAT LANGUAGE -->
-    <div class="fixed left-6 bottom-6 z-[999]">
-        <button onclick="toggleLanguageDropdown()" class="w-14 h-14 rounded-full bg-zinc-900 hover:bg-zinc-800 text-white shadow-2xl flex items-center justify-center transition-transform hover:scale-105">
-            <i class="fa-solid fa-globe text-2xl text-cyan-400"></i>
-        </button>
-    </div>
 
     <!-- AI CHAT MODAL -->
     <div onclick="if(event.target.id === 'ai-modal') closeAIChat()" id="ai-modal"
@@ -1464,13 +1497,6 @@
                 autoDisplay: false,
                 includedLanguages: 'en,hi,es,fr,de,pt,it,ru,ja,zh-CN,ar'
             }, 'google_translate_element')
-            
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                autoDisplay: false,
-                includedLanguages: 'en,hi,es,fr,de,pt,it,ru,ja,zh-CN,ar',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'gtranslate-widget-footer')
         }
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -1692,14 +1718,70 @@
         }
         
         function submitContactForm() {
-            hideContactModal()
+            const modalName = document.getElementById("modal-name")
+            const modalEmail = document.getElementById("modal-email")
+            const modalPhone = document.getElementById("modal-phone")
+            const modalMessage = document.getElementById("modal-message")
+            
+            const name = modalName ? modalName.value.trim() : ''
+            const email = modalEmail ? modalEmail.value.trim() : ''
+            const phone = modalPhone ? modalPhone.value.trim() : ''
+            const message = modalMessage ? modalMessage.value.trim() : ''
+            
+            if (!name || !phone) {
+                showToast("Please fill in your name and phone number")
+                return
+            }
+            
+            const whatsappMsg = `*New Contact Form Submission*\n\n👤 Name: ${name}\n📧 Email: ${email || 'Not provided'}\n📱 Phone: ${phone}\n\n📝 Message:\n${message || 'No message'}`
+            
+            const whatsappUrl = `https://wa.me/917253985468?text=${encodeURIComponent(whatsappMsg)}`
+            window.open(whatsappUrl, '_blank')
+            
+            const emailSubject = `📩 Contact Form: ${name}`
+            const emailBody = `Name: ${name}\nEmail: ${email || 'Not provided'}\nPhone: ${phone}\n\nMessage:\n${message || 'No message'}`
+            const emailUrl = `mailto:pragatisahayak@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
+            
             setTimeout(() => {
-                showToast("Thank you. We received your message!")
-            }, 700)
+                window.location.href = emailUrl
+            }, 800)
+            
+            hideContactModal()
+            showToast("✅ Message sent! We'll contact you soon.")
         }
         
         function submitLeadForm(e) {
             e.preventDefault()
+            
+            const nameInput = document.getElementById("name")
+            const businessInput = document.getElementById("business")
+            const phoneInput = document.getElementById("phone")
+            
+            const name = nameInput ? nameInput.value.trim() : ''
+            const business = businessInput ? businessInput.value.trim() : ''
+            const phone = phoneInput ? phoneInput.value.trim() : ''
+            
+            console.log('Form submitted:', { name, business, phone })
+            
+            if (!name || !phone) {
+                showToast("Please fill in your name and phone number")
+                return
+            }
+            
+            const message = `*New Website Inquiry*\n\n👤 Name: ${name}\n🏢 Business: ${business || 'Not specified'}\n📱 Phone: ${phone}\n\nI'm interested in website development services. Please contact me.`
+            
+            // Send via WhatsApp
+            const whatsappUrl = `https://wa.me/917253985468?text=${encodeURIComponent(message)}`
+            window.open(whatsappUrl, '_blank')
+            
+            // Also send email
+            const emailSubject = `🔥 New Lead: ${name} - Website Inquiry`
+            const emailBody = `Name: ${name}\nBusiness: ${business || 'Not specified'}\nPhone: ${phone}\n\nInterested in website development services.\n\n--\nSent from Pragati Sahayak website`
+            const emailUrl = `mailto:pragatisahayak@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
+            
+            setTimeout(() => {
+                window.location.href = emailUrl
+            }, 800)
             
             const form = document.getElementById("lead-form")
             const success = document.getElementById("form-success")
@@ -1709,13 +1791,15 @@
             setTimeout(() => {
                 form.classList.add("hidden")
                 success.classList.remove("hidden")
+                success.innerHTML = `✅ <strong>Message Sent!</strong><br>We will call you at <strong>${phone}</strong> within 48 hours.`
                 
                 setTimeout(() => {
                     success.classList.add("hidden")
+                    success.innerHTML = '✅ Thank you! Our growth team will call you shortly.'
                     form.classList.remove("hidden")
                     form.style.opacity = 1
                     form.reset()
-                }, 3800)
+                }, 5000)
             }, 420)
         }
         
@@ -1770,6 +1854,37 @@
             }).catch(() => {
                 showToast(`Copy this UPI ID: ${UPI_ID}`)
             })
+        }
+
+        function copyMobile() {
+            navigator.clipboard.writeText('7253985468').then(() => {
+                showToast(`Mobile number copied: +91 72539 85468`)
+            }).catch(() => {
+                showToast(`Copy this number: +91 72539 85468`)
+            })
+        }
+
+        function showPaymentTab(tab) {
+            const qrTab = document.getElementById('payment-qr')
+            const mobileTab = document.getElementById('payment-mobile')
+            const tabQr = document.getElementById('tab-qr')
+            const tabMobile = document.getElementById('tab-mobile')
+
+            if (tab === 'qr') {
+                qrTab.classList.remove('hidden')
+                mobileTab.classList.add('hidden')
+                tabQr.classList.remove('bg-zinc-100', 'text-zinc-600')
+                tabQr.classList.add('bg-zinc-900', 'text-white')
+                tabMobile.classList.add('bg-zinc-100', 'text-zinc-600')
+                tabMobile.classList.remove('bg-zinc-900', 'text-white')
+            } else {
+                qrTab.classList.add('hidden')
+                mobileTab.classList.remove('hidden')
+                tabMobile.classList.remove('bg-zinc-100', 'text-zinc-600')
+                tabMobile.classList.add('bg-zinc-900', 'text-white')
+                tabQr.classList.add('bg-zinc-100', 'text-zinc-600')
+                tabQr.classList.remove('bg-zinc-900', 'text-white')
+            }
         }
 
         function confirmPaymentOnWhatsApp() {
@@ -2071,7 +2186,7 @@
             }
         }
         
-        // Language toggle
+        // Language toggle - Navbar
         function toggleLanguageDropdown() {
             const dropdown = document.getElementById("lang-dropdown")
             dropdown.classList.toggle("open")
@@ -2103,8 +2218,9 @@
             localStorage.setItem('ps-language', lang)
             updateLanguageUI(lang)
             
-            const dropdown = document.getElementById("lang-dropdown")
-            if (dropdown) dropdown.classList.remove("open")
+            // Close navbar dropdown
+            const navDropdown = document.getElementById("lang-dropdown")
+            if (navDropdown) navDropdown.classList.remove("open")
             
             // Set Google Translate cookies
             document.cookie = `googtrans=/en/${googleLang};expires=${new Date(Date.now()+31536e9).toUTCString()};path=/`
@@ -2136,10 +2252,11 @@
             window.addEventListener("scroll", handleScroll)
             document.addEventListener("keydown", handleKeys)
             document.addEventListener("click", (e) => {
-                const dropdown = document.getElementById("lang-dropdown")
-                const selector = document.querySelector(".nav-lang-selector")
-                if (dropdown && dropdown.classList.contains("open") && !selector.contains(e.target)) {
-                    dropdown.classList.remove("open")
+                // Close navbar dropdown
+                const navDropdown = document.getElementById("lang-dropdown")
+                const navSelector = document.querySelector(".nav-lang-selector")
+                if (navDropdown && navDropdown.classList.contains("open") && !navSelector.contains(e.target)) {
+                    navDropdown.classList.remove("open")
                 }
             })
             
