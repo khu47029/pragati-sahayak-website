@@ -1,9 +1,9 @@
-# 🛍️ ZENYTH — Complete Project Documentation
+# 💻 pragati sahayak— Complete Project Documentation
 
 ## 🏗️ Project Structure
 
 ```
-zenyth/
+pragatisahayak/
 ├── index.html              ← Main SPA shell (navbar, footer, modals)
 ├── css/
 │   ├── animations.css      ← All keyframes & motion utilities
@@ -57,18 +57,18 @@ Visit [github.com](https://github.com) → Sign Up (free)
 
 ### Step 2 — Create Repository
 1. Click **+** → **New repository**
-2. Name: `zenyth` (or your brand name)
+2. Name: `pragatisahayak` (or your brand name)
 3. Set to **Public**
 4. Click **Create repository**
 
 ### Step 3 — Push Your Files
 ```bash
-# Inside your /zenyth folder
+# Inside your /pragatisahayak folder
 git init
 git add index.html css/ js/
-git commit -m "feat: launch ZENYTH marketplace"
+git commit -m "feat: launch pragatisahayak marketplace"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/zenyth.git
+git remote add origin https://github.com/YOUR_USERNAME/pragatisahayak.git
 git push -u origin main
 ```
 
@@ -79,7 +79,7 @@ git push -u origin main
 
 ### Step 5 — Your Store is Live! 🎉
 ```
-https://YOUR_USERNAME.github.io/zenyth/
+https://YOUR_USERNAME.github.io/pragatisahayak/
 ```
 
 ---
@@ -88,7 +88,7 @@ https://YOUR_USERNAME.github.io/zenyth/
 
 1. Go to **[netlify.com](https://netlify.com)** → Sign up free
 2. Click **"Add new site"** → **"Deploy manually"**
-3. **Drag your `/zenyth` folder** (without `backend/`) onto the page
+3. **Drag your `/pragatisahayak` folder** (without `backend/`) onto the page
 4. Done! URL: `https://your-site-name.netlify.app`
 
 ### Custom Domain
@@ -101,9 +101,9 @@ https://YOUR_USERNAME.github.io/zenyth/
 
 ```bash
 npm install -g vercel
-cd zenyth
+cd pragatisahayak
 vercel --prod
-# → https://zenyth.vercel.app
+# → https://pragatisahayak.vercel.app
 ```
 
 ---
@@ -111,7 +111,7 @@ vercel --prod
 ## ⚙️ C++ Backend — Local Setup
 
 ```bash
-cd zenyth/backend
+cd pragatisahayak/backend
 
 # Compile (Linux/macOS)
 g++ -std=c++17 -O2 -pthread -o server server.cpp
