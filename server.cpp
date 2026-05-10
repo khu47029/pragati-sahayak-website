@@ -1,6 +1,6 @@
 /*
  * ════════════════════════════════════════════════════════════
- * ZENYTH — C++ Backend Server
+ * pragatisahayak — C++ Backend Server
  * Production-grade HTTP server architecture concept
  *
  * Handles:
@@ -12,8 +12,8 @@
  *   POST /api/auth/register     → new user registration
  *   GET  /api/search?q=         → full-text product search
  *
- * Compile:  g++ -std=c++17 -O2 -pthread -o zenyth_server server.cpp
- * Run:      ./zenyth_server
+ * Compile:  g++ -std=c++17 -O2 -pthread -o pragatisahayak_server server.cpp
+ * Run:      ./pragatisahayak_server
  * URL:      http://localhost:8080
  * ════════════════════════════════════════════════════════════
  */
@@ -49,7 +49,7 @@ namespace Config {
   constexpr int    BUF_SIZE    = 131072;  // 128 KB
   constexpr int    THREAD_POOL = 8;
   const std::string VERSION    = "1.0.0";
-  const std::string APP_NAME   = "ZENYTH API";
+  const std::string APP_NAME   = "pragatisahayak API";
 }
 
 /* ════════════════ LOGGING ════════════════ */
@@ -105,7 +105,7 @@ struct HttpResponse {
     ss << "X-XSS-Protection: 1; mode=block\r\n";
     ss << "Strict-Transport-Security: max-age=31536000\r\n";
     // CORS
-    ss << "Access-Control-Allow-Origin: https://zenyth.in\r\n"; // lock to your domain in prod
+    ss << "Access-Control-Allow-Origin: https://pragatisahayak.in\r\n"; // lock to your domain in prod
     ss << "Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS\r\n";
     ss << "Access-Control-Allow-Headers: Content-Type, Authorization, X-Request-ID\r\n";
     for (auto& [k, v] : extra_headers) ss << k << ": " << v << "\r\n";
