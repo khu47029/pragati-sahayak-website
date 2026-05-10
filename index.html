@@ -3478,7 +3478,602 @@ window.innerHeight
 }
 
 }
+<!-- =========================================================
+TRISS SALON AGRA — GOD LEVEL CINEMATIC HERO
+PASTE INSIDE <body>
+========================================================= -->
 
+<section class="hero">
+
+    <!-- HERO IMAGE -->
+    <img src="image_0.png" alt="TRISS Salon Reception" class="hero-image">
+
+    <!-- OVERLAYS -->
+    <div class="hero-dark"></div>
+    <div class="hero-gold"></div>
+    <div class="hero-noise"></div>
+
+    <!-- FLOATING LIGHTS -->
+    <div class="light light-1"></div>
+    <div class="light light-2"></div>
+
+    <!-- HERO CONTENT -->
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            TRISS SALON AGRA
+        </span>
+
+        <h1>
+            Your Luxury<br>
+            Beauty Hotspot<br>
+            In Agra
+        </h1>
+
+        <p>
+            Luxury Hair • Skin • Bridal • Beauty Experiences
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#booking" class="btn gold-btn">
+                Book Appointment
+            </a>
+
+            <a href="#services" class="btn glass-btn">
+                Explore Services
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- SCROLL -->
+    <div class="scroll-line"></div>
+
+</section>
+
+<style>
+
+/* =========================================================
+GOOGLE FONTS
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+
+/* =========================================================
+ROOT
+========================================================= */
+
+:root{
+
+--gold:#d6b36a;
+--gold-light:#f8e5b9;
+--black:#050505;
+--white:#ffffff;
+
+}
+
+/* =========================================================
+GLOBAL
+========================================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#000;
+font-family:'Lato',sans-serif;
+overflow-x:hidden;
+}
+
+/* =========================================================
+HERO
+========================================================= */
+
+.hero{
+
+position:relative;
+height:100vh;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+
+}
+
+/* =========================================================
+IMAGE
+========================================================= */
+
+.hero-image{
+
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+
+animation:zoomHero 14s ease-in-out infinite alternate;
+
+}
+
+@keyframes zoomHero{
+
+0%{
+transform:scale(1);
+}
+
+100%{
+transform:scale(1.08);
+}
+
+}
+
+/* =========================================================
+OVERLAYS
+========================================================= */
+
+.hero-dark{
+
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+to bottom,
+rgba(0,0,0,.25),
+rgba(0,0,0,.65)
+);
+
+z-index:1;
+
+}
+
+.hero-gold{
+
+position:absolute;
+inset:0;
+
+background:
+radial-gradient(
+circle at center,
+rgba(214,179,106,.12),
+transparent 55%
+);
+
+mix-blend-mode:screen;
+
+z-index:2;
+
+}
+
+.hero-noise{
+
+position:absolute;
+inset:0;
+
+background-image:
+url("https://grainy-gradients.vercel.app/noise.svg");
+
+opacity:.05;
+
+mix-blend-mode:soft-light;
+
+z-index:3;
+
+}
+
+/* =========================================================
+LIGHTS
+========================================================= */
+
+.light{
+
+position:absolute;
+border-radius:50%;
+filter:blur(120px);
+opacity:.18;
+mix-blend-mode:screen;
+pointer-events:none;
+
+}
+
+.light-1{
+
+width:500px;
+height:500px;
+
+background:gold;
+
+top:-150px;
+left:-150px;
+
+animation:lightMove1 8s ease-in-out infinite alternate;
+
+}
+
+.light-2{
+
+width:450px;
+height:450px;
+
+background:#ffffff;
+
+bottom:-150px;
+right:-150px;
+
+animation:lightMove2 10s ease-in-out infinite alternate;
+
+}
+
+@keyframes lightMove1{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(120px,80px);
+}
+
+}
+
+@keyframes lightMove2{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(-120px,-80px);
+}
+
+}
+
+/* =========================================================
+CONTENT
+========================================================= */
+
+.hero-content{
+
+position:relative;
+z-index:5;
+
+max-width:900px;
+
+text-align:center;
+
+padding:60px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(14px);
+
+box-shadow:
+0 20px 80px rgba(0,0,0,.55),
+0 0 60px rgba(214,179,106,.12);
+
+animation:fadeUp 1.5s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* =========================================================
+TAG
+========================================================= */
+
+.hero-tag{
+
+display:inline-block;
+
+padding:10px 22px;
+
+border-radius:999px;
+
+border:1px solid rgba(214,179,106,.35);
+
+background:rgba(214,179,106,.08);
+
+font-size:12px;
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+color:var(--gold-light);
+
+margin-bottom:30px;
+
+}
+
+/* =========================================================
+HEADINGS
+========================================================= */
+
+.hero-content h1{
+
+font-family:'Playfair Display',serif;
+
+font-size:90px;
+
+line-height:0.95;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#fff;
+
+margin-bottom:30px;
+
+text-shadow:
+0 0 30px rgba(214,179,106,.18);
+
+}
+
+.hero-content p{
+
+font-size:20px;
+
+letter-spacing:2px;
+
+color:rgba(255,255,255,.82);
+
+margin-bottom:45px;
+
+}
+
+/* =========================================================
+BUTTONS
+========================================================= */
+
+.hero-buttons{
+
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+position:relative;
+
+padding:18px 40px;
+
+border-radius:999px;
+
+font-size:13px;
+font-weight:700;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+text-decoration:none;
+
+overflow:hidden;
+
+transition:.4s ease;
+
+}
+
+.btn::before{
+
+content:"";
+
+position:absolute;
+top:0;
+left:-120%;
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.6),
+transparent
+);
+
+transition:.8s;
+
+}
+
+.btn:hover::before{
+left:120%;
+}
+
+.gold-btn{
+
+background:
+linear-gradient(
+135deg,
+var(--gold),
+#f5dfb2
+);
+
+color:#111;
+
+box-shadow:
+0 0 40px rgba(214,179,106,.35);
+
+}
+
+.glass-btn{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.12);
+
+color:#fff;
+
+backdrop-filter:blur(10px);
+
+}
+
+.btn:hover{
+
+transform:translateY(-5px);
+
+}
+
+/* =========================================================
+SCROLL LINE
+========================================================= */
+
+.scroll-line{
+
+position:absolute;
+
+bottom:30px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:2px;
+height:80px;
+
+background:
+linear-gradient(
+to bottom,
+var(--gold),
+transparent
+);
+
+z-index:5;
+
+animation:scrollMove 2s infinite;
+
+}
+
+@keyframes scrollMove{
+
+0%{
+opacity:0;
+transform:translateX(-50%) translateY(-10px);
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+transform:translateX(-50%) translateY(10px);
+}
+
+}
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
+
+@media(max-width:992px){
+
+.hero-content h1{
+font-size:64px;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero-content{
+
+padding:35px 24px;
+margin:20px;
+
+}
+
+.hero-content h1{
+
+font-size:42px;
+line-height:1.1;
+
+}
+
+.hero-content p{
+
+font-size:15px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.btn{
+
+width:100%;
+
+}
+
+}
+
+</style>
+
+<script>
+
+/* =========================================================
+PARALLAX
+========================================================= */
+
+window.addEventListener("scroll",()=>{
+
+const scroll = window.pageYOffset;
+
+document.querySelector(".hero-image").style.transform =
+`scale(1.08) translateY(${scroll * 0.08}px)`;
+
+});
+
+/* =========================================================
+MOUSE LIGHT EFFECT
+========================================================= */
+
+const hero = document.querySelector(".hero");
+
+hero.addEventListener("mousemove",(e)=>{
+
+const x = e.clientX / window.innerWidth * 100;
+const y = e.clientY / window.innerHeight * 100;
+
+hero.style.background = `
+radial-gradient(
+circle at ${x}% ${y}%,
+rgba(214,179,106,.08),
+transparent 40%
+)
+`;
+
+});
+
+</script>
 
 </body>
 </html>
