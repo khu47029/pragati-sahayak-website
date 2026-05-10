@@ -3474,5 +3474,659 @@ window.innerHeight
 });
 
     </script>
+    <!-- =========================================================
+ULTRA CINEMATIC HERO VIDEO SECTION
+ADD THIS INSIDE <body>
+========================================================= -->
+
+<section class="cinematic-hero" id="home">
+
+    <!-- CINEMATIC VIDEO -->
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="assets/triss-cinematic.mp4" type="video/mp4">
+    </video>
+
+    <!-- LUXURY OVERLAYS -->
+    <div class="hero-overlay"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-vignette"></div>
+
+    <!-- FLOATING PARTICLES -->
+    <div class="particles"></div>
+
+    <!-- CINEMATIC LIGHT -->
+    <div class="light-orb orb-1"></div>
+    <div class="light-orb orb-2"></div>
+
+    <!-- CONTENT -->
+    <div class="hero-content">
+
+        <span class="luxury-label">
+            TRISS SALON AGRA
+        </span>
+
+        <h1>
+            Your Luxury Beauty<br>
+            Hotspot in Agra
+        </h1>
+
+        <p>
+            Luxury Hair • Skin • Bridal • Beauty Experiences
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#booking" class="luxury-btn primary-btn">
+                Book Appointment
+            </a>
+
+            <a href="#services" class="luxury-btn secondary-btn">
+                Explore Services
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- SCROLL INDICATOR -->
+    <div class="scroll-indicator">
+        <span></span>
+    </div>
+
+</section>
+
+<!-- =========================================================
+ULTRA LUXURY CSS
+========================================================= -->
+
+<style>
+
+:root{
+
+--gold:#d4b06a;
+--gold-light:#f7e1b0;
+--black:#070707;
+--charcoal:#111111;
+--white:#ffffff;
+--glass:rgba(255,255,255,.06);
+
+}
+
+/* =========================================================
+GLOBAL
+========================================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Lato',sans-serif;
+background:#000;
+overflow-x:hidden;
+color:#fff;
+
+}
+
+/* =========================================================
+HERO
+========================================================= */
+
+.cinematic-hero{
+
+position:relative;
+height:100vh;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+
+}
+
+/* =========================================================
+VIDEO
+========================================================= */
+
+.hero-video{
+
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+
+animation:slowZoom 18s ease-in-out infinite alternate;
+
+}
+
+@keyframes slowZoom{
+
+0%{
+transform:scale(1);
+}
+
+100%{
+transform:scale(1.12);
+}
+
+}
+
+/* =========================================================
+OVERLAYS
+========================================================= */
+
+.hero-overlay{
+
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+to bottom,
+rgba(0,0,0,.35),
+rgba(0,0,0,.55)
+);
+
+z-index:1;
+
+}
+
+.hero-gradient{
+
+position:absolute;
+inset:0;
+
+background:
+radial-gradient(
+circle at center,
+rgba(212,176,106,.15),
+transparent 60%
+);
+
+mix-blend-mode:screen;
+
+z-index:2;
+
+}
+
+.hero-vignette{
+
+position:absolute;
+inset:0;
+
+box-shadow:
+inset 0 0 250px rgba(0,0,0,.85);
+
+z-index:3;
+
+}
+
+/* =========================================================
+PARTICLES
+========================================================= */
+
+.particles{
+
+position:absolute;
+inset:0;
+
+background-image:
+radial-gradient(rgba(255,255,255,.2) 1px, transparent 1px);
+
+background-size:80px 80px;
+
+animation:particlesMove 18s linear infinite;
+
+opacity:.18;
+
+z-index:2;
+
+}
+
+@keyframes particlesMove{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-120px);
+}
+
+}
+
+/* =========================================================
+LIGHT ORBS
+========================================================= */
+
+.light-orb{
+
+position:absolute;
+width:500px;
+height:500px;
+border-radius:50%;
+filter:blur(120px);
+opacity:.16;
+pointer-events:none;
+mix-blend-mode:screen;
+
+}
+
+.orb-1{
+
+background:gold;
+top:-150px;
+left:-120px;
+
+animation:floatOrb1 10s ease-in-out infinite alternate;
+
+}
+
+.orb-2{
+
+background:#ffffff;
+bottom:-150px;
+right:-120px;
+
+animation:floatOrb2 14s ease-in-out infinite alternate;
+
+}
+
+@keyframes floatOrb1{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(120px,80px);
+}
+
+}
+
+@keyframes floatOrb2{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(-120px,-60px);
+}
+
+}
+
+/* =========================================================
+CONTENT
+========================================================= */
+
+.hero-content{
+
+position:relative;
+z-index:5;
+
+max-width:900px;
+padding:70px;
+
+text-align:center;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:32px;
+
+box-shadow:
+0 20px 80px rgba(0,0,0,.55),
+0 0 80px rgba(212,176,106,.12);
+
+animation:heroReveal 1.8s ease;
+
+}
+
+@keyframes heroReveal{
+
+from{
+
+opacity:0;
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.luxury-label{
+
+display:inline-block;
+
+padding:10px 22px;
+
+border:1px solid rgba(212,176,106,.4);
+
+border-radius:999px;
+
+font-size:12px;
+letter-spacing:4px;
+
+margin-bottom:28px;
+
+color:var(--gold-light);
+
+text-transform:uppercase;
+
+background:rgba(212,176,106,.08);
+
+}
+
+/* =========================================================
+HEADINGS
+========================================================= */
+
+.hero-content h1{
+
+font-family:'Playfair Display',serif;
+
+font-size:88px;
+line-height:1;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+margin-bottom:26px;
+
+text-shadow:
+0 0 25px rgba(212,176,106,.2);
+
+}
+
+.hero-content p{
+
+font-size:20px;
+letter-spacing:2px;
+
+color:rgba(255,255,255,.82);
+
+margin-bottom:40px;
+
+}
+
+/* =========================================================
+BUTTONS
+========================================================= */
+
+.hero-buttons{
+
+display:flex;
+gap:22px;
+justify-content:center;
+flex-wrap:wrap;
+
+}
+
+.luxury-btn{
+
+position:relative;
+
+padding:18px 42px;
+
+border-radius:999px;
+
+text-decoration:none;
+
+font-size:14px;
+font-weight:700;
+letter-spacing:2px;
+
+overflow:hidden;
+
+transition:.4s ease;
+
+text-transform:uppercase;
+
+}
+
+.primary-btn{
+
+background:linear-gradient(
+135deg,
+var(--gold),
+#f6deb0
+);
+
+color:#111;
+
+box-shadow:
+0 0 40px rgba(212,176,106,.35);
+
+}
+
+.secondary-btn{
+
+border:1px solid rgba(255,255,255,.15);
+
+background:rgba(255,255,255,.05);
+
+color:#fff;
+
+backdrop-filter:blur(8px);
+
+}
+
+.luxury-btn::before{
+
+content:"";
+
+position:absolute;
+top:0;
+left:-120%;
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.7),
+transparent
+);
+
+transition:.8s;
+
+}
+
+.luxury-btn:hover::before{
+left:120%;
+}
+
+.luxury-btn:hover{
+
+transform:translateY(-5px);
+
+}
+
+/* =========================================================
+SCROLL INDICATOR
+========================================================= */
+
+.scroll-indicator{
+
+position:absolute;
+bottom:30px;
+left:50%;
+
+transform:translateX(-50%);
+
+z-index:5;
+
+}
+
+.scroll-indicator span{
+
+display:block;
+
+width:2px;
+height:80px;
+
+background:
+linear-gradient(
+to bottom,
+var(--gold),
+transparent
+);
+
+animation:scrollPulse 2s infinite;
+
+}
+
+@keyframes scrollPulse{
+
+0%{
+opacity:0;
+transform:translateY(-10px);
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+transform:translateY(10px);
+}
+
+}
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
+
+@media(max-width:992px){
+
+.hero-content h1{
+font-size:64px;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero-content{
+
+padding:40px 24px;
+margin:20px;
+
+}
+
+.hero-content h1{
+
+font-size:42px;
+line-height:1.1;
+
+}
+
+.hero-content p{
+
+font-size:16px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.luxury-btn{
+
+width:100%;
+
+}
+
+}
+
+</style>
+
+<!-- =========================================================
+ULTRA PREMIUM JS
+========================================================= -->
+
+<script>
+
+/* =========================================================
+MOUSE FOLLOW GLOW
+========================================================= */
+
+const hero = document.querySelector(".cinematic-hero");
+
+hero.addEventListener("mousemove",(e)=>{
+
+const x = e.clientX / window.innerWidth;
+const y = e.clientY / window.innerHeight;
+
+hero.style.background = `
+radial-gradient(
+circle at ${x*100}% ${y*100}%,
+rgba(212,176,106,.12),
+transparent 40%
+)
+`;
+
+});
+
+/* =========================================================
+PARALLAX EFFECT
+========================================================= */
+
+window.addEventListener("scroll",()=>{
+
+const scroll = window.pageYOffset;
+
+document.querySelector(".hero-video").style.transform =
+`scale(1.08) translateY(${scroll * 0.12}px)`;
+
+});
+
+/* =========================================================
+SMOOTH REVEAL
+========================================================= */
+
+const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+document.querySelectorAll("section").forEach(sec=>{
+
+observer.observe(sec);
+
+});
+
+</script>
 </body>
 </html>
