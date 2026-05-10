@@ -2850,5 +2850,642 @@ blob.style.transform =
 });
 
 </script>
+    <!-- ===================================== -->
+<!-- ULTRA GOD LEVEL CINEMATIC ADDITIONS -->
+<!-- PASTE BEFORE </body> -->
+<!-- ===================================== -->
+
+<!-- THREE JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<!-- GSAP -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<!-- LENIS -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+<!-- ========================= -->
+<!-- LUXURY LOADER -->
+<!-- ========================= -->
+
+<div id="luxury-loader">
+
+<div class="loader-logo">
+ZENYTH
+</div>
+
+<div class="loader-line"></div>
+
+</div>
+
+<!-- ========================= -->
+<!-- 3D BACKGROUND -->
+<!-- ========================= -->
+
+<canvas id="bg-canvas"></canvas>
+
+<!-- ========================= -->
+<!-- AI CHATBOT -->
+<!-- ========================= -->
+
+<div id="ai-chat">
+
+<div class="ai-header">
+AI Assistant
+</div>
+
+<div class="ai-body">
+<div class="ai-message">
+Hello 👋  
+How can I help you today?
+</div>
+</div>
+
+<div class="ai-input">
+
+<input type="text" placeholder="Ask something...">
+
+<button>Send</button>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- AI BUTTON -->
+<!-- ========================= -->
+
+<button id="chat-toggle">
+🤖
+</button>
+
+<!-- ========================= -->
+<!-- VIDEO HERO -->
+<!-- ========================= -->
+
+<video autoplay muted loop playsinline id="hero-video">
+
+<source src="assets/video.mp4" type="video/mp4">
+
+</video>
+
+<!-- ========================= -->
+<!-- SCROLL STORY SECTION -->
+<!-- ========================= -->
+
+<section class="story-section">
+
+<div class="story-panel">
+
+<h2 class="story-title">
+We Build Digital Luxury
+</h2>
+
+<p class="story-text">
+Premium cinematic experiences inspired by Apple, Tesla and modern luxury brands.
+</p>
+
+</div>
+
+<div class="story-panel">
+
+<h2 class="story-title">
+Ultra Smooth Experience
+</h2>
+
+<p class="story-text">
+3D interactions, cinematic scrolls and futuristic UI systems.
+</p>
+
+</div>
+
+<div class="story-panel">
+
+<h2 class="story-title">
+AI Powered Future
+</h2>
+
+<p class="story-text">
+Automation, AI assistants and next-generation digital systems.
+</p>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- INTERACTIVE CARDS -->
+<!-- ========================= -->
+
+<section class="cards-wrap">
+
+<div class="interactive-card">
+<h3>Luxury UI</h3>
+<p>Apple Vision inspired interface.</p>
+</div>
+
+<div class="interactive-card">
+<h3>3D Motion</h3>
+<p>Tesla style immersive animation.</p>
+</div>
+
+<div class="interactive-card">
+<h3>AI Systems</h3>
+<p>Smart business automation.</p>
+</div>
+
+</section>
+
+<style>
+
+/* ===================================== */
+/* GOD LEVEL UI */
+/* ===================================== */
+
+body{
+background:#050505;
+overflow-x:hidden;
+}
+
+/* CANVAS */
+
+#bg-canvas{
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+z-index:-3;
+}
+
+/* VIDEO */
+
+#hero-video{
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:.18;
+z-index:-2;
+filter:contrast(1.1) saturate(1.1);
+}
+
+/* LOADER */
+
+#luxury-loader{
+position:fixed;
+inset:0;
+background:#000;
+z-index:9999999;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+transition:1s ease;
+}
+
+.loader-logo{
+font-size:4rem;
+font-weight:900;
+letter-spacing:.4em;
+color:white;
+margin-bottom:30px;
+animation:pulse 2s infinite;
+}
+
+.loader-line{
+width:240px;
+height:2px;
+background:linear-gradient(90deg,#22d3ee,#a855f7,#22d3ee);
+background-size:200%;
+animation:loading 2s linear infinite;
+}
+
+@keyframes loading{
+0%{
+background-position:0%;
+}
+100%{
+background-position:200%;
+}
+}
+
+@keyframes pulse{
+0%{
+opacity:.5;
+}
+50%{
+opacity:1;
+}
+100%{
+opacity:.5;
+}
+}
+
+/* STORY */
+
+.story-section{
+position:relative;
+padding:30vh 10vw;
+display:flex;
+flex-direction:column;
+gap:40vh;
+}
+
+.story-panel{
+max-width:800px;
+}
+
+.story-title{
+font-size:clamp(3rem,8vw,8rem);
+font-weight:900;
+line-height:1;
+background:linear-gradient(90deg,#fff,#22d3ee);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:30px;
+}
+
+.story-text{
+font-size:1.4rem;
+line-height:1.8;
+color:#b4b4b4;
+max-width:700px;
+}
+
+/* INTERACTIVE CARDS */
+
+.cards-wrap{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+padding:150px 8vw;
+}
+
+.interactive-card{
+position:relative;
+padding:50px;
+border-radius:40px;
+overflow:hidden;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(20px);
+transition:.5s ease;
+transform-style:preserve-3d;
+}
+
+.interactive-card:hover{
+transform:
+rotateX(8deg)
+rotateY(-8deg)
+translateY(-10px);
+
+box-shadow:
+0 0 80px rgba(34,211,238,.2),
+0 0 120px rgba(168,85,247,.15);
+}
+
+.interactive-card h3{
+font-size:2rem;
+margin-bottom:20px;
+color:white;
+}
+
+.interactive-card p{
+color:#b4b4b4;
+line-height:1.7;
+}
+
+/* CHATBOT */
+
+#chat-toggle{
+position:fixed;
+bottom:30px;
+left:30px;
+width:70px;
+height:70px;
+border:none;
+border-radius:50%;
+background:linear-gradient(135deg,#22d3ee,#a855f7);
+font-size:2rem;
+z-index:99999;
+cursor:pointer;
+box-shadow:0 0 40px rgba(34,211,238,.5);
+}
+
+#ai-chat{
+position:fixed;
+bottom:120px;
+left:30px;
+width:360px;
+background:rgba(10,10,10,.9);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(20px);
+border-radius:30px;
+overflow:hidden;
+display:none;
+z-index:99999;
+}
+
+.ai-header{
+padding:20px;
+font-weight:700;
+color:white;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.ai-body{
+padding:20px;
+height:260px;
+overflow:auto;
+}
+
+.ai-message{
+background:rgba(255,255,255,.06);
+padding:15px;
+border-radius:18px;
+color:white;
+line-height:1.6;
+}
+
+.ai-input{
+display:flex;
+border-top:1px solid rgba(255,255,255,.1);
+}
+
+.ai-input input{
+flex:1;
+padding:16px;
+background:transparent;
+border:none;
+color:white;
+outline:none;
+}
+
+.ai-input button{
+padding:16px 24px;
+background:#22d3ee;
+border:none;
+color:black;
+font-weight:700;
+cursor:pointer;
+}
+
+/* CURSOR TRAIL */
+
+.cursor-trail{
+position:fixed;
+width:12px;
+height:12px;
+border-radius:50%;
+pointer-events:none;
+background:#22d3ee;
+mix-blend-mode:screen;
+z-index:999999;
+animation:trailFade .6s linear forwards;
+}
+
+@keyframes trailFade{
+to{
+opacity:0;
+transform:scale(0);
+}
+}
+
+/* APPLE GLASS */
+
+.glass-vision{
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(40px);
+box-shadow:
+0 0 40px rgba(255,255,255,.05),
+inset 0 1px 1px rgba(255,255,255,.1);
+}
+
+/* TESLA GLOW */
+
+.tesla-glow{
+position:relative;
+overflow:hidden;
+}
+
+.tesla-glow::before{
+content:'';
+position:absolute;
+inset:-2px;
+background:linear-gradient(
+90deg,
+#22d3ee,
+#a855f7,
+#22d3ee
+);
+
+background-size:300%;
+filter:blur(20px);
+opacity:.5;
+animation:borderFlow 8s linear infinite;
+z-index:-1;
+}
+
+@keyframes borderFlow{
+0%{
+background-position:0%;
+}
+100%{
+background-position:300%;
+}
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.story-section{
+padding:20vh 8vw;
+}
+
+.story-title{
+font-size:3rem;
+}
+
+.story-text{
+font-size:1rem;
+}
+
+#ai-chat{
+width:90%;
+left:5%;
+}
+
+}
+
+</style>
+
+<script>
+
+/* ===================================== */
+/* LOADER */
+/* ===================================== */
+
+window.addEventListener('load', () => {
+
+setTimeout(() => {
+
+document.getElementById('luxury-loader').style.opacity = '0';
+
+setTimeout(() => {
+
+document.getElementById('luxury-loader').style.display='none';
+
+},1000);
+
+},2500);
+
+});
+
+/* ===================================== */
+/* LENIS */
+/* ===================================== */
+
+const lenis = new Lenis({
+duration:1.4,
+smoothWheel:true
+});
+
+function raf(time){
+lenis.raf(time);
+requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+/* ===================================== */
+/* AI CHAT */
+/* ===================================== */
+
+const toggle = document.getElementById('chat-toggle');
+const chat = document.getElementById('ai-chat');
+
+toggle.onclick = () => {
+
+chat.style.display =
+chat.style.display === 'block'
+? 'none'
+: 'block';
+
+};
+
+/* ===================================== */
+/* CURSOR TRAIL */
+/* ===================================== */
+
+window.addEventListener('mousemove', e => {
+
+const trail = document.createElement('div');
+
+trail.className = 'cursor-trail';
+
+trail.style.left = e.clientX + 'px';
+trail.style.top = e.clientY + 'px';
+
+document.body.appendChild(trail);
+
+setTimeout(() => {
+trail.remove();
+},600);
+
+});
+
+/* ===================================== */
+/* GSAP */
+/* ===================================== */
+
+gsap.from('.story-title',{
+y:120,
+opacity:0,
+duration:1.5,
+stagger:.3,
+scrollTrigger:{
+trigger:'.story-section',
+start:'top 80%'
+}
+});
+
+gsap.from('.interactive-card',{
+y:100,
+opacity:0,
+stagger:.2,
+duration:1.2,
+scrollTrigger:{
+trigger:'.cards-wrap',
+start:'top 80%'
+}
+});
+
+/* ===================================== */
+/* THREE JS */
+/* ===================================== */
+
+const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(
+75,
+window.innerWidth/window.innerHeight,
+0.1,
+1000
+);
+
+const renderer = new THREE.WebGLRenderer({
+canvas:document.getElementById('bg-canvas'),
+alpha:true
+});
+
+renderer.setSize(window.innerWidth,window.innerHeight);
+
+const geometry =
+new THREE.TorusKnotGeometry(10,3,100,16);
+
+const material =
+new THREE.MeshBasicMaterial({
+color:0x22d3ee,
+wireframe:true
+});
+
+const torus =
+new THREE.Mesh(geometry,material);
+
+scene.add(torus);
+
+camera.position.z = 30;
+
+function animate(){
+
+requestAnimationFrame(animate);
+
+torus.rotation.x += 0.003;
+torus.rotation.y += 0.005;
+
+renderer.render(scene,camera);
+
+}
+
+animate();
+
+window.addEventListener('resize',()=>{
+
+camera.aspect =
+window.innerWidth/window.innerHeight;
+
+camera.updateProjectionMatrix();
+
+renderer.setSize(
+window.innerWidth,
+window.innerHeight
+);
+
+});
+
+    </script>
 </body>
 </html>
