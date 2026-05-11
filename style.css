@@ -1554,3 +1554,295 @@ body{
   }
 
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#000;
+  overflow-x:hidden;
+}
+
+.ultra-hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-video{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  top:0;
+  left:0;
+  z-index:1;
+  transform:scale(1.1);
+  animation:zoomVideo 20s infinite alternate ease-in-out;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+  to bottom,
+  rgba(0,0,0,0.55),
+  rgba(0,0,0,0.75)
+  );
+  z-index:2;
+}
+
+#particles-js{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:3;
+}
+
+.luxury-navbar{
+  position:absolute;
+  top:0;
+  width:100%;
+  padding:25px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:10;
+}
+
+.logo{
+  color:#fff;
+  font-size:32px;
+  font-weight:700;
+  letter-spacing:4px;
+}
+
+.logo::after{
+  content:' SALON';
+  color:#d6b36a;
+}
+
+.luxury-navbar ul{
+  display:flex;
+  list-style:none;
+  gap:40px;
+}
+
+.luxury-navbar a{
+  text-decoration:none;
+  color:#fff;
+  font-size:15px;
+  transition:0.4s;
+}
+
+.luxury-navbar a:hover{
+  color:#d6b36a;
+}
+
+.hero-content{
+  position:relative;
+  z-index:5;
+  text-align:center;
+  color:#fff;
+  padding:20px;
+  animation:fadeUp 1.5s ease;
+}
+
+.hero-tag{
+  letter-spacing:6px;
+  color:#d6b36a;
+  margin-bottom:25px;
+  font-size:13px;
+}
+
+.hero-content h1{
+  font-size:120px;
+  font-weight:800;
+  line-height:1;
+  text-transform:uppercase;
+}
+
+.hero-content h1 span{
+  color:#d6b36a;
+}
+
+.hero-desc{
+  margin-top:25px;
+  color:#ddd;
+  font-size:20px;
+}
+
+.hero-buttons{
+  margin-top:45px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn-primary,
+.btn-secondary{
+  padding:16px 40px;
+  border-radius:60px;
+  text-decoration:none;
+  transition:0.5s;
+  font-weight:600;
+}
+
+.btn-primary{
+  background:#d6b36a;
+  color:#000;
+}
+
+.btn-primary:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 40px rgba(214,179,106,0.45);
+}
+
+.btn-secondary{
+  border:1px solid rgba(255,255,255,0.25);
+  color:#fff;
+  backdrop-filter:blur(10px);
+}
+
+.btn-secondary:hover{
+  background:#fff;
+  color:#000;
+}
+
+.glow{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(140px);
+  opacity:0.35;
+  z-index:2;
+}
+
+.glow-1{
+  width:350px;
+  height:350px;
+  background:#ff00ff;
+  top:-120px;
+  left:-100px;
+  animation:float1 10s infinite alternate ease-in-out;
+}
+
+.glow-2{
+  width:400px;
+  height:400px;
+  background:#d6b36a;
+  bottom:-150px;
+  right:-120px;
+  animation:float2 12s infinite alternate ease-in-out;
+}
+
+.scroll-indicator{
+  position:absolute;
+  bottom:35px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:10;
+}
+
+.scroll-indicator span{
+  width:28px;
+  height:50px;
+  border:2px solid #fff;
+  border-radius:50px;
+  display:block;
+  position:relative;
+}
+
+.scroll-indicator span::before{
+  content:'';
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:#fff;
+  border-radius:50%;
+  left:50%;
+  top:10px;
+  transform:translateX(-50%);
+  animation:scrollAnim 2s infinite;
+}
+
+@keyframes scrollAnim{
+  0%{
+    opacity:1;
+    top:10px;
+  }
+
+  100%{
+    opacity:0;
+    top:28px;
+  }
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(60px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes float1{
+  from{
+    transform:translate(0,0);
+  }
+
+  to{
+    transform:translate(100px,80px);
+  }
+}
+
+@keyframes float2{
+  from{
+    transform:translate(0,0);
+  }
+
+  to{
+    transform:translate(-120px,-90px);
+  }
+}
+
+@keyframes zoomVideo{
+  from{
+    transform:scale(1.1);
+  }
+
+  to{
+    transform:scale(1.25);
+  }
+}
+
+@media(max-width:768px){
+
+  .hero-content h1{
+    font-size:60px;
+  }
+
+  .hero-desc{
+    font-size:15px;
+  }
+
+  .luxury-navbar ul{
+    display:none;
+  }
+
+}
