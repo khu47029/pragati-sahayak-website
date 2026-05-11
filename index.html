@@ -380,6 +380,31 @@
         }
     </style>
 </head>
+    <body>
+
+<!-- YAHAN ADD KARO -->
+<section class="ultra-hero">
+
+  <div id="particles-js"></div>
+
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="https://cdn.coverr.co/videos/coverr-woman-getting-haircut-1569076765278?download=1080p" type="video/mp4">
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <nav class="luxury-navbar">
+    ...
+  </nav>
+
+</section>
+
+<!-- Tumhari baki website -->
+<section>
+...
+</section>
+
+    </body>
 <body class="bg-zinc-50 text-zinc-900">
     <!-- TOP PROGRESS -->
     <div id="progress" class="fixed top-0 left-0 h-0.5 bg-cyan-400 z-[9999] shadow-[0_0_12px_#22d3ee]"></div>
@@ -3485,56 +3510,69 @@ window.innerHeight
   <div class="floating-light light1"></div>
   <div class="floating-light light2"></div>
 </section>
-    <!-- ULTRA CINEMATIC HERO SECTION -->
-<section class="ultra-hero">
 
-  <div id="particles-js"></div>
+<!-- Tumhari website ka sara content -->
 
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="https://cdn.coverr.co/videos/coverr-woman-getting-haircut-1569076765278?download=1080p" type="video/mp4">
-  </video>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-  <div class="hero-overlay"></div>
+    <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: {
+          value: 90
+        },
 
-  <nav class="luxury-navbar">
-    <div class="logo">TRISS</div>
+        color: {
+          value: "#d6b36a"
+        },
 
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+        shape: {
+          type: "circle"
+        },
 
-  <div class="hero-content">
+        opacity: {
+          value: 0.5
+        },
 
-    <p class="hero-tag">
-      CINEMATIC • LUXURY • PREMIUM EXPERIENCE
-    </p>
+        size: {
+          value: 3
+        },
 
-    <h1>
-      TRISS <span>SALON</span>
-    </h1>
+        line_linked: {
+          enable: true,
+          distance: 140,
+          color: "#d6b36a",
+          opacity: 0.2,
+          width: 1
+        },
 
-    <p class="hero-desc">
-      Transforming beauty into luxury cinematic experiences.
-    </p>
+        move: {
+          enable: true,
+          speed: 2
+        }
+      },
 
-    <div class="hero-buttons">
-      <a href="#" class="btn-primary">Book Appointment</a>
-      <a href="#" class="btn-secondary">Explore Services</a>
-    </div>
+      interactivity: {
+        detect_on: "canvas",
 
-  </div>
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse"
+          },
 
-  <div class="scroll-indicator">
-    <span></span>
-  </div>
+          onclick: {
+            enable: true,
+            mode: "push"
+          }
+        }
+      },
 
-  <div class="glow glow-1"></div>
-  <div class="glow glow-2"></div>
+      retina_detect: true
+    });
+    </script>
 
-</section>
+</body>
+</html>
 </body>
 </html>
