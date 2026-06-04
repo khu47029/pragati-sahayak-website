@@ -1,0 +1,7 @@
+# Repo mein yeh files mat jaane do
+*.env
+*.key
+secrets.json
+config.local.js
+node_modules/
+.DS_Store
