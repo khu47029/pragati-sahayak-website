@@ -4,52 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pragati Sahayak - Professional website development, SEO, and AI Chatbot solutions worldwide. Empowering businesses with digital excellence.">
-    <meta name="keywords" content="web development, SEO, AI chatbot, digital marketing, website design">
-    <meta name="author" content="Pragati Sahayak">
-    <meta name="theme-color" content="#0B0B14">
-    
     <title>Pragati Sahayak • Digital Growth Partners</title>
     <meta name="google-site-verification" content="-McSLbLKs2o3ML41tez2oEQrvvc8VywXeWosfVytl-c" />
-    
-    <!-- Preconnect untuk Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <!-- External Stylesheets -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="components.css">
-    
     <style>
-        /* ════════════════════════════════════════════ */
-        /* CORE ANIMATIONS & KEYFRAMES */
-        /* ════════════════════════════════════════════ */
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap');
         
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #0B0B14;
-            color: #F0F0FF;
-            line-height: 1.6;
-            overflow-x: hidden;
+        :root {
+            --navy: #0a1729;
         }
 
-        /* ════════════════════════════════════════════ */
-        /* MISSING ANIMATIONS - ADD */
-        /* ════════════════════════════════════════════ */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: #0a0e27; color: #fff; overflow-x: hidden; }
+
+        /* ════════════════════════════════════════ */
+        /* KEYFRAMES */
+        /* ════════════════════════════════════════ */
 
         @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -62,30 +34,8 @@
         }
 
         @keyframes slideUp {
-            from { 
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes bounce {
@@ -93,625 +43,589 @@
             50% { transform: translateY(-10px); }
         }
 
-        @keyframes scaleUp {
-            from { transform: scaleX(0); }
-            to { transform: scaleX(1); }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
-        @keyframes toastSlide {
-            from {
-                opacity: 0;
-                transform: translateX(400px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        /* ════════════════════════════════════════ */
+        /* NAVBAR */
+        /* ════════════════════════════════════════ */
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        @keyframes toastOut {
-            to {
-                opacity: 0;
-                transform: translateX(400px);
-            }
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* ════════════════════════════════════════════ */
-        /* INTRO SCREEN */
-        /* ════════════════════════════════════════════ */
-
-        #intro {
-            background: linear-gradient(135deg, #0B0B14 0%, #1a1a2e 100%);
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .intro-logo {
-            animation: logoPop 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards, logoGlow 2.5s ease-in-out infinite alternate 1.2s;
+        .logo span:first-child { color: #22d3ee; }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
         }
 
-        @keyframes logoPop {
-            0% { 
-                transform: scale(0.3) translateY(40px);
-                opacity: 0;
-                filter: blur(10px);
-            }
-            70% {
-                transform: scale(1.05) translateY(-5px);
-                filter: blur(0);
-            }
-            100% {
-                transform: scale(1) translateY(0);
-                opacity: 1;
-            }
+        .nav-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
-        @keyframes logoGlow {
-            0% {
-                filter: drop-shadow(0 0 15px rgba(34, 211, 238, 0.4));
+        .nav-links a:hover {
+            color: #22d3ee;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #22d3ee, #06b6d4);
+            color: #000;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(34, 211, 238, 0.3);
+        }
+
+        /* ════════════════════════════════════════ */
+        /* HERO SECTION */
+        /* ════════════════════════════════════════ */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a0f3f 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(34, 211, 238, 0.1), transparent);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #22d3ee, #06b6d4, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons button {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #22d3ee, #06b6d4);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(34, 211, 238, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #22d3ee;
+            color: #22d3ee;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(34, 211, 238, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* ════════════════════════════════════════ */
+        /* SERVICES SECTION */
+        /* ════════════════════════════════════════ */
+
+        .services {
+            padding: 5rem 2rem;
+            background: #0f1230;
+        }
+
+        .services .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            font-weight: 800;
+        }
+
+        .section-title .highlight {
+            color: #22d3ee;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            border-color: #22d3ee;
+            background: rgba(34, 211, 238, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(34, 211, 238, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+
+        /* ════════════════════════════════════════ */
+        /* PRICING SECTION */
+        /* ════════════════════════════════════════ */
+
+        .pricing {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a0f3f 100%);
+        }
+
+        .pricing .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.popular {
+            border-color: #22d3ee;
+            background: rgba(34, 211, 238, 0.1);
+            transform: scale(1.05);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #22d3ee;
+            margin: 1rem 0;
+        }
+
+        .price-description {
+            color: #9ca3af;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list {
+            text-align: left;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .features-list li {
+            list-style: none;
+            color: #d1d5db;
+        }
+
+        .features-list li::before {
+            content: '✓ ';
+            color: #22d3ee;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .pricing-card button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #22d3ee, #06b6d4);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .pricing-card button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(34, 211, 238, 0.4);
+        }
+
+        /* ════════════════════════════════════════ */
+        /* CTA SECTION */
+        /* ════════════════════════════════════════ */
+
+        .cta-section {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #22d3ee, #06b6d4);
+            color: #000;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-section button {
+            padding: 1rem 2.5rem;
+            background: #000;
+            color: #22d3ee;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .cta-section button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ════════════════════════════════════════ */
+        /* FOOTER */
+        /* ════════════════════════════════════════ */
+
+        footer {
+            background: #0a0e27;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: #22d3ee;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ════════════════════════════════════════ */
+        /* RESPONSIVE */
+        /* ════════════════════════════════════════ */
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .pricing-card.popular {
                 transform: scale(1);
             }
-            100% {
-                filter: drop-shadow(0 0 35px rgba(245, 158, 11, 0.7));
-                transform: scale(1.03);
+
+            .cta-section h2 {
+                font-size: 1.8rem;
             }
         }
-
-        /* ════════════════════════════════════════════ */
-        /* PROGRESS BAR */
-        /* ════════════════════════════════════════════ */
-
-        #progress {
-            background: linear-gradient(90deg, #22d3ee 0%, #f59e0b 100%);
-            height: 3px;
-            box-shadow: 0 0 20px rgba(34, 211, 238, 0.8);
-        }
-
-        /* ════════════════════════════════════════════ */
-        /* UTILITY CLASSES */
-        /* ════════════════════════════════════════════ */
-
-        .hidden { display: none !important; }
-        .visible { display: block !important; }
-        .opacity-0 { opacity: 0; }
-        .opacity-50 { opacity: 0.5; }
-        .opacity-100 { opacity: 1; }
     </style>
 </head>
 <body>
-    <!-- ════════════════════════════════════════════ -->
-    <!-- PROGRESS BAR -->
-    <!-- ════════════════════════════════════════════ -->
-    <div id="progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-cyan-400 to-amber-400 z-[9999] transition-all"></div>
+    <!-- ════════════════════════════════════════ -->
+    <!-- NAVBAR -->
+    <!-- ════════════════════════════════════════ -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <span>P</span><span style="color: #fff;">ragati Sahayak</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cta-btn">Get Started</button>
+        </div>
+    </nav>
 
-    <!-- Google Translate Element (Hidden) -->
-    <div id="google_translate_element" class="hidden"></div>
+    <!-- ════════════════════════════════════════ -->
+    <!-- HERO SECTION -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                Your Business,<br/>
+                <span class="highlight">Digitally Unstoppable</span>
+            </h1>
+            <p>
+                Professional website development, SEO optimization, AI chatbots,<br/>
+                and premium video editing services for businesses worldwide.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Start Your Project</button>
+                <button class="btn-secondary">Learn More</button>
+            </div>
+        </div>
+    </section>
 
-    <!-- ════════════════════════════════════════════ -->
-    <!-- INTRO OVERLAY -->
-    <!-- ════════════════════════════════════════════ -->
-    <div onclick="dismissIntro()" id="intro" 
-         class="fixed inset-0 z-[99999] flex items-center justify-center transition-all duration-700 opacity-100 pointer-events-auto">
-        
-        <div class="text-center px-6">
-            <!-- Logo Section -->
-            <div class="intro-logo mb-8 flex items-center justify-center gap-4 flex-col">
-                <div class="w-32 h-32 mx-auto flex items-center justify-center">
-                    <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Gradient Definitions -->
-                        <defs>
-                            <linearGradient id="gradientBrand" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
-                                <stop offset="50%" style="stop-color:#2563eb;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
-                            </linearGradient>
-                            <filter id="glow">
-                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                                <feMerge>
-                                    <feMergeNode in="coloredBlur"/>
-                                    <feMergeNode in="SourceGraphic"/>
-                                </feMerge>
-                            </filter>
-                        </defs>
-                        
-                        <!-- Outer Circle -->
-                        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#gradientBrand)" stroke-width="2" opacity="0.3"/>
-                        
-                        <!-- Middle Circle -->
-                        <circle cx="50" cy="50" r="35" fill="none" stroke="url(#gradientBrand)" stroke-width="1.5" opacity="0.2"/>
-                        
-                        <!-- Inner Glow -->
-                        <circle cx="50" cy="50" r="25" fill="url(#gradientBrand)" opacity="0.1" filter="url(#glow)"/>
-                        
-                        <!-- Letter P -->
-                        <text x="35" y="60" font-size="36" font-weight="bold" fill="#22d3ee" 
-                              font-family="Plus Jakarta Sans" text-anchor="middle"
-                              filter="url(#glow)">P</text>
-                        
-                        <!-- Letter S -->
-                        <text x="65" y="60" font-size="36" font-weight="bold" fill="#f59e0b"
-                              font-family="Plus Jakarta Sans" text-anchor="middle"
-                              filter="url(#glow)">S</text>
-                    </svg>
+    <!-- ════════════════════════════════════════ -->
+    <!-- SERVICES SECTION -->
+    <!-- ════════════════════════════════════════ -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our <span class="highlight">Services</span></h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Web Development</h3>
+                    <p>Fast, responsive websites built with modern technologies. Perfect for startups and enterprises.</p>
                 </div>
-            </div>
-
-            <!-- Heading -->
-            <div class="mb-6">
-                <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-3">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-amber-400">
-                        Pragati Sahayak
-                    </span>
-                </h1>
-                <p class="text-amber-300 text-sm font-mono tracking-widest">we design. we write. we edit</p>
-            </div>
-
-            <!-- Status Badge -->
-            <div class="inline-flex items-center gap-2 bg-white/10 text-white text-xs tracking-[1px] font-medium px-4 py-2 rounded-full mb-12 backdrop-blur">
-                <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                LAUNCHING DIGITAL INDIA
-            </div>
-
-            <!-- CTA -->
-            <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2">
-                <div onclick="dismissIntro(event)" 
-                     class="text-white/50 text-xs tracking-widest flex items-center gap-2 hover:text-white/70 transition-colors cursor-pointer">
-                    <span>TAP TO BEGIN JOURNEY</span>
-                    <i class="fa-solid fa-arrow-down text-xs animate-bounce"></i>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>SEO & Marketing</h3>
+                    <p>Boost your online visibility with our proven SEO strategies and digital marketing expertise.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Chatbots</h3>
+                    <p>Intelligent chatbots that engage customers 24/7 and improve conversion rates.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎥</div>
+                    <h3>Video Editing</h3>
+                    <p>Professional video editing, motion graphics, and cinematic content creation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Brand Design</h3>
+                    <p>Custom logo design, branding guidelines, and visual identity creation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✍️</div>
+                    <h3>Content Writing</h3>
+                    <p>Engaging, SEO-optimized content that tells your brand story effectively.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- ════════════════════════════════════════════ -->
-    <!-- MAIN CONTENT -->
-    <!-- ════════════════════════════════════════════ -->
-    <main id="app" class="bg-zinc-50 text-zinc-900 min-h-screen">
-        
-        <!-- Navbar -->
-        <nav id="nav" class="sticky top-0 z-50 bg-white border-b border-zinc-100 transition-all shadow-sm">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="h-16 flex items-center justify-between">
-                    
-                    <!-- Logo -->
-                    <a href="#" onclick="dismissIntro(event)" class="flex items-center gap-2 group">
-                        <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-amber-400 rounded-lg flex items-center justify-center text-white font-bold text-lg">PS</div>
-                        <div class="hidden sm:block">
-                            <div class="font-bold text-zinc-900">Pragati</div>
-                            <div class="text-xs text-amber-500 font-mono">SAHAYAK</div>
-                        </div>
-                    </a>
-
-                    <!-- Desktop Menu -->
-                    <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                        <a href="#how" class="text-zinc-600 hover:text-zinc-900 transition">How it works</a>
-                        <a href="#services" class="text-zinc-600 hover:text-zinc-900 transition">Services</a>
-                        <a href="#work" class="text-zinc-600 hover:text-zinc-900 transition">Work</a>
-                        <a href="#pricing" class="text-zinc-600 hover:text-zinc-900 transition">Plans</a>
-                        <a href="#about" class="text-zinc-600 hover:text-zinc-900 transition">About</a>
-                    </div>
-
-                    <!-- Right Actions -->
-                    <div class="flex items-center gap-4">
-                        <button onclick="toggleLanguage()" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-zinc-100 hover:bg-zinc-200 transition text-sm font-medium">
-                            <i class="fa-solid fa-globe text-cyan-500"></i>
-                            <span id="currentLang">EN</span>
-                        </button>
-                        <a href="https://wa.me/917253985468" target="_blank" 
-                           class="hidden sm:flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-lg font-medium hover:shadow-lg transition">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <span>Contact</span>
-                        </a>
-                    </div>
+    <!-- ════════════════════════════════════════ -->
+    <!-- PRICING SECTION -->
+    <!-- ════════════════════════════════════════ -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple <span class="highlight">Pricing</span></h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>⚡ Fast</h3>
+                    <div class="price">₹12,999</div>
+                    <p class="price-description">Quick launch for startups</p>
+                    <ul class="features-list">
+                        <li>5-Page Website</li>
+                        <li>Mobile Responsive</li>
+                        <li>Basic SEO</li>
+                        <li>3 Days Support</li>
+                    </ul>
+                    <button>Choose Plan</button>
+                </div>
+                <div class="pricing-card popular">
+                    <h3>🔥 Growth</h3>
+                    <div class="price">₹16,999</div>
+                    <p class="price-description">Most Popular</p>
+                    <ul class="features-list">
+                        <li>10-Page Website</li>
+                        <li>AI Chatbot</li>
+                        <li>Advanced SEO</li>
+                        <li>1 Month Support</li>
+                        <li>Analytics Dashboard</li>
+                    </ul>
+                    <button>Choose Plan</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>⭐ Premium</h3>
+                    <div class="price">₹27,999</div>
+                    <p class="price-description">Enterprise solution</p>
+                    <ul class="features-list">
+                        <li>Unlimited Pages</li>
+                        <li>Advanced AI Chatbot</li>
+                        <li>Full SEO Package</li>
+                        <li>Video Content</li>
+                        <li>3 Months Support</li>
+                    </ul>
+                    <button>Choose Plan</button>
                 </div>
             </div>
-        </nav>
+        </div>
+    </section>
 
-        <!-- ════════════════════════════════════════════ -->
-        <!-- HERO SECTION -->
-        <!-- ════════════════════════════════════════════ -->
-        <section class="relative py-20 md:py-32 overflow-hidden">
-            <!-- Background Gradient -->
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-cyan-50 to-amber-50 -z-10"></div>
-            <div class="absolute top-0 right-0 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl -z-10"></div>
-            <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl -z-10"></div>
+    <!-- ════════════════════════════════════════ -->
+    <!-- CTA SECTION -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="cta-section">
+        <h2>Ready to Grow Your Business?</h2>
+        <p>Let's create something extraordinary together. Get started with a free consultation today.</p>
+        <button>Contact Us Now</button>
+    </section>
 
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Hero Label -->
-                <div class="flex justify-center mb-8">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100/50 rounded-full border border-cyan-200">
-                        <span class="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></span>
-                        <span class="text-sm font-medium text-cyan-700">Digital Growth Unleashed</span>
-                    </div>
-                </div>
+    <!-- ════════════════════════════════════════ -->
+    <!-- FOOTER -->
+    <!-- ════════════════════════════════════════ -->
+    <footer>
+        <p>&copy; 2026 Pragati Sahayak. All rights reserved.</p>
+        <p>Made with ❤️ in India 🇮🇳</p>
+        <div class="social-links">
+            <a href="https://wa.me/917253985468" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:pragatisahayak@gmail.com" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="#" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
 
-                <!-- Main Heading -->
-                <h1 class="text-5xl md:text-7xl font-bold text-center mb-6 leading-tight">
-                    Your Business,<br/>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-blue-500 to-amber-400">
-                        Digitally Unstoppable
-                    </span>
-                </h1>
-
-                <!-- Subheading -->
-                <p class="text-xl text-zinc-600 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
-                    We design stunning websites, optimize for search, build intelligent chatbots, and create viral content that transforms your business into a digital powerhouse.
-                </p>
-
-                <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-                    <a href="https://wa.me/917253985468" target="_blank"
-                       class="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-lg font-bold hover:shadow-lg transition transform hover:scale-105">
-                        <i class="fa-brands fa-whatsapp mr-2"></i>Start Project
-                    </a>
-                    <button onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})"
-                            class="px-8 py-3 border-2 border-zinc-300 text-zinc-900 rounded-lg font-bold hover:bg-zinc-100 transition">
-                        Explore Services
-                    </button>
-                </div>
-
-                <!-- Trust Section -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center pt-12 border-t border-zinc-200">
-                    <div>
-                        <div class="text-3xl font-bold text-cyan-500 mb-2">50+</div>
-                        <div class="text-sm text-zinc-600">Projects Delivered</div>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-bold text-blue-500 mb-2">10+</div>
-                        <div class="text-sm text-zinc-600">Countries Served</div>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-bold text-amber-500 mb-2">4.5★</div>
-                        <div class="text-sm text-zinc-600">Client Rating</div>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-bold text-cyan-600 mb-2">100%</div>
-                        <div class="text-sm text-zinc-600">Satisfaction Rate</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ════════════════════════════════════════════ -->
-        <!-- SERVICES SECTION -->
-        <!-- ════════════════════════════════════════════ -->
-        <section id="services" class="py-20 md:py-32 bg-zinc-900 text-white">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Section Header -->
-                <div class="text-center mb-16">
-                    <span class="text-cyan-400 text-sm font-mono tracking-widest">OUR SERVICES</span>
-                    <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6">
-                        What We Do
-                    </h2>
-                    <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
-                        Complete digital solutions tailored to your business needs
-                    </p>
-                </div>
-
-                <!-- Services Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service 1 -->
-                    <div class="group p-8 bg-zinc-800 rounded-2xl border border-zinc-700 hover:border-cyan-400 transition hover:shadow-xl hover:shadow-cyan-500/10">
-                        <div class="text-4xl mb-4 text-cyan-400">🌐</div>
-                        <h3 class="text-2xl font-bold mb-3">Website Development</h3>
-                        <p class="text-zinc-400 mb-4">Fast, responsive, SEO-optimized websites that convert visitors into customers.</p>
-                        <ul class="text-sm text-zinc-500 space-y-2">
-                            <li>✓ Custom Design</li>
-                            <li>✓ Mobile Responsive</li>
-                            <li>✓ Lightning Fast</li>
-                        </ul>
-                    </div>
-
-                    <!-- Service 2 -->
-                    <div class="group p-8 bg-zinc-800 rounded-2xl border border-zinc-700 hover:border-blue-400 transition hover:shadow-xl hover:shadow-blue-500/10">
-                        <div class="text-4xl mb-4 text-blue-400">📊</div>
-                        <h3 class="text-2xl font-bold mb-3">SEO & Marketing</h3>
-                        <p class="text-zinc-400 mb-4">Rank higher on Google and reach your target audience effectively.</p>
-                        <ul class="text-sm text-zinc-500 space-y-2">
-                            <li>✓ Keyword Research</li>
-                            <li>✓ Content Strategy</li>
-                            <li>✓ Performance Reports</li>
-                        </ul>
-                    </div>
-
-                    <!-- Service 3 -->
-                    <div class="group p-8 bg-zinc-800 rounded-2xl border border-zinc-700 hover:border-amber-400 transition hover:shadow-xl hover:shadow-amber-500/10">
-                        <div class="text-4xl mb-4 text-amber-400">🤖</div>
-                        <h3 class="text-2xl font-bold mb-3">AI Chatbots</h3>
-                        <p class="text-zinc-400 mb-4">Intelligent bots that qualify leads and provide 24/7 customer support.</p>
-                        <ul class="text-sm text-zinc-500 space-y-2">
-                            <li>✓ AI Powered</li>
-                            <li>✓ WhatsApp Ready</li>
-                            <li>✓ Multilingual</li>
-                        </ul>
-                    </div>
-
-                    <!-- Service 4 -->
-                    <div class="group p-8 bg-zinc-800 rounded-2xl border border-zinc-700 hover:border-cyan-400 transition hover:shadow-xl hover:shadow-cyan-500/10">
-                        <div class="text-4xl mb-4 text-cyan-400">🎥</div>
-                        <h3 class="text-2xl font-bold mb-3">Video Editing</h3>
-                        <p class="text-zinc-400 mb-4">Cinematic videos, viral reels, and professional content that stands out.</p>
-                        <ul class="text-sm text-zinc-500 space-y-2">
-                            <li>✓ Viral Reels</li>
-                            <li>✓ Color Grading</li>
-                            <li>✓ Motion Graphics</li>
-                        </ul>
-                    </div>
-
-                    <!-- Service 5 -->
-                    <div class="group p-8 bg-zinc-800 rounded-2xl border border-zinc-700 hover:border-blue-400 transition hover:shadow-xl hover:shadow-blue-500/10">
-                        <div class="text-4xl mb-4 text-blue-400">🎨</div>
-                        <h3 class="text-2xl font-bold mb-3">Logo Design</h3>
-                        <p class="text-zinc-400 mb-4">Memorable brand identity that reflects your business vision.</p>
-                        <ul class="text-sm text-zinc-500 space-y-2">
-                            <li>✓ Custom Design</li>
-                            <li>✓ Brand Guidelines</li>
-                            <li>✓ All Formats</li>
-                        </ul>
-                    </div>
-
-                    <!-- Service 6 -->
-                    <div class="group p-8 bg-zinc-800 rounded-2xl border border-zinc-700 hover:border-amber-400 transition hover:shadow-xl hover:shadow-amber-500/10">
-                        <div class="text-4xl mb-4 text-amber-400">✍️</div>
-                        <h3 class="text-2xl font-bold mb-3">Content Writing</h3>
-                        <p class="text-zinc-400 mb-4">Engaging, SEO-optimized content that tells your brand story.</p>
-                        <ul class="text-sm text-zinc-500 space-y-2">
-                            <li>✓ Blog Posts</li>
-                            <li>✓ Copywriting</li>
-                            <li>✓ Social Media</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ════════════════════════════════════════════ -->
-        <!-- PRICING SECTION -->
-        <!-- ════════════════════════════════════════════ -->
-        <section id="pricing" class="py-20 md:py-32 bg-white">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Section Header -->
-                <div class="text-center mb-16">
-                    <span class="text-cyan-600 text-sm font-mono tracking-widest">TRANSPARENT PRICING</span>
-                    <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6 text-zinc-900">
-                        Simple, Flexible Plans
-                    </h2>
-                    <p class="text-xl text-zinc-600 max-w-2xl mx-auto">
-                        Choose the perfect plan for your business growth
-                    </p>
-                </div>
-
-                <!-- Pricing Cards -->
-                <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <!-- Plan 1 -->
-                    <div class="p-8 rounded-2xl border-2 border-zinc-200 hover:border-cyan-400 transition">
-                        <div class="text-amber-500 text-lg font-bold mb-2">⚡ FAST</div>
-                        <h3 class="text-3xl font-bold mb-2 text-zinc-900">₹12,999</h3>
-                        <p class="text-zinc-600 mb-6">Quick launch for solo businesses</p>
-                        <ul class="space-y-3 mb-8 text-sm text-zinc-700">
-                            <li>✓ 5-Page Website</li>
-                            <li>✓ Mobile Responsive</li>
-                            <li>✓ Basic SEO</li>
-                            <li>✓ 3 Days Support</li>
-                        </ul>
-                        <a href="https://wa.me/917253985468?text=I%20want%20to%20book%20the%20FAST%20plan" target="_blank"
-                           class="w-full py-3 bg-zinc-900 text-white rounded-lg font-bold hover:bg-zinc-800 transition text-center">
-                            Get Started
-                        </a>
-                    </div>
-
-                    <!-- Plan 2 (Popular) -->
-                    <div class="p-8 rounded-2xl border-2 border-cyan-400 bg-cyan-50 relative">
-                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-cyan-400 to-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">
-                            MOST POPULAR
-                        </div>
-                        <div class="text-cyan-600 text-lg font-bold mb-2">🔥 GROWTH</div>
-                        <h3 class="text-3xl font-bold mb-2 text-zinc-900">₹16,999</h3>
-                        <p class="text-zinc-600 mb-6">Perfect for growing brands</p>
-                        <ul class="space-y-3 mb-8 text-sm text-zinc-700">
-                            <li>✓ 10-Page Website</li>
-                            <li>✓ AI Chatbot</li>
-                            <li>✓ Advanced SEO</li>
-                            <li>✓ 1 Month Support</li>
-                            <li>✓ Analytics Dashboard</li>
-                        </ul>
-                        <a href="https://wa.me/917253985468?text=I%20want%20to%20book%20the%20GROWTH%20plan" target="_blank"
-                           class="w-full py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-lg font-bold hover:shadow-lg transition text-center">
-                            Get Started
-                        </a>
-                    </div>
-
-                    <!-- Plan 3 -->
-                    <div class="p-8 rounded-2xl border-2 border-zinc-200 hover:border-amber-400 transition">
-                        <div class="text-amber-500 text-lg font-bold mb-2">⭐ PREMIUM</div>
-                        <h3 class="text-3xl font-bold mb-2 text-zinc-900">₹27,999</h3>
-                        <p class="text-zinc-600 mb-6">Enterprise-grade solutions</p>
-                        <ul class="space-y-3 mb-8 text-sm text-zinc-700">
-                            <li>✓ Unlimited Pages</li>
-                            <li>✓ Advanced AI Chatbot</li>
-                            <li>✓ Full SEO Package</li>
-                            <li>✓ Video Content</li>
-                            <li>✓ 3 Months Support</li>
-                        </ul>
-                        <a href="https://wa.me/917253985468?text=I%20want%20to%20book%20the%20PREMIUM%20plan" target="_blank"
-                           class="w-full py-3 bg-zinc-900 text-white rounded-lg font-bold hover:bg-zinc-800 transition text-center">
-                            Get Started
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Payment Methods -->
-                <div class="text-center">
-                    <p class="text-zinc-600 mb-4">Payment Methods Accepted:</p>
-                    <div class="flex justify-center gap-6 flex-wrap">
-                        <span class="flex items-center gap-2">💳 <span>UPI</span></span>
-                        <span class="flex items-center gap-2">📱 <span>PhonePe</span></span>
-                        <span class="flex items-center gap-2">🏦 <span>Paytm</span></span>
-                        <span class="flex items-center gap-2">🔗 <span>Google Pay</span></span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ════════════════════════════════════════════ -->
-        <!-- CTA SECTION -->
-        <!-- ════════════════════════════════════════════ -->
-        <section class="py-20 md:py-32 bg-gradient-to-r from-cyan-600 via-blue-600 to-amber-500 text-white relative overflow-hidden">
-            <div class="absolute inset-0 opacity-10">
-                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-            </div>
-
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                <h2 class="text-5xl md:text-6xl font-bold mb-6">
-                    Ready to Transform Your Business?
-                </h2>
-                <p class="text-xl mb-8 opacity-95 max-w-2xl mx-auto">
-                    Let's create something extraordinary together. Contact us today for a free consultation.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://wa.me/917253985468" target="_blank"
-                       class="px-8 py-4 bg-white text-cyan-600 rounded-lg font-bold hover:shadow-xl transition transform hover:scale-105">
-                        <i class="fa-brands fa-whatsapp mr-2"></i>Chat on WhatsApp
-                    </a>
-                    <a href="mailto:pragatisahayak@gmail.com"
-                       class="px-8 py-4 border-2 border-white text-white rounded-lg font-bold hover:bg-white/10 transition">
-                        <i class="fa-solid fa-envelope mr-2"></i>Send Email
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ════════════════════════════════════════════ -->
-        <!-- FOOTER -->
-        <!-- ════════════════════════════════════════════ -->
-        <footer class="bg-zinc-900 text-zinc-400 py-12">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-4 gap-8 mb-8">
-                    <!-- Brand -->
-                    <div>
-                        <div class="flex items-center gap-2 mb-4">
-                            <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-amber-400 rounded-lg flex items-center justify-center text-white font-bold">PS</div>
-                            <div>
-                                <div class="font-bold text-white">Pragati</div>
-                                <div class="text-xs text-amber-500">Sahayak</div>
-                            </div>
-                        </div>
-                        <p class="text-sm">Digital growth partners for Indian businesses.</p>
-                    </div>
-
-                    <!-- Services -->
-                    <div>
-                        <h4 class="font-bold text-white mb-4">Services</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="#services" class="hover:text-cyan-400 transition">Web Development</a></li>
-                            <li><a href="#services" class="hover:text-cyan-400 transition">SEO Marketing</a></li>
-                            <li><a href="#services" class="hover:text-cyan-400 transition">AI Chatbots</a></li>
-                            <li><a href="#services" class="hover:text-cyan-400 transition">Video Editing</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Company -->
-                    <div>
-                        <h4 class="font-bold text-white mb-4">Company</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="#about" class="hover:text-cyan-400 transition">About Us</a></li>
-                            <li><a href="#" class="hover:text-cyan-400 transition">Blog</a></li>
-                            <li><a href="#" class="hover:text-cyan-400 transition">Contact</a></li>
-                            <li><a href="#" class="hover:text-cyan-400 transition">Privacy</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Connect -->
-                    <div>
-                        <h4 class="font-bold text-white mb-4">Connect</h4>
-                        <div class="space-y-2 text-sm">
-                            <p>📱 <a href="https://wa.me/917253985468" class="hover:text-cyan-400 transition">WhatsApp</a></p>
-                            <p>📧 <a href="mailto:pragatisahayak@gmail.com" class="hover:text-cyan-400 transition">Email</a></p>
-                            <p>📍 Uttar Pradesh, India 🇮🇳</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="border-t border-zinc-800 pt-8 text-center text-sm">
-                    <p>© 2026 <span class="text-cyan-400">Pragati Sahayak</span> • Made with ❤️ in India</p>
-                    <p class="mt-2">We design. We write. We edit.</p>
-                </div>
-            </div>
-        </footer>
-    </main>
-
-    <!-- ════════════════════════════════════════════ -->
-    <!-- SCRIPTS -->
-    <!-- ════════════════════════════════════════════ -->
     <script>
-        // ════════════════════════════════════════════
-        // INTRO SCREEN LOGIC
-        // ════════════════════════════════════════════
-        
-        function dismissIntro(e) {
-            if (e) e.preventDefault();
-            const intro = document.getElementById('intro');
-            const app = document.getElementById('app');
-            
-            if (intro && app) {
-                intro.style.opacity = '0';
-                intro.style.pointerEvents = 'none';
-                intro.style.transition = 'opacity 0.7s ease';
-                
-                setTimeout(() => {
-                    app.style.display = 'block';
-                }, 300);
-            }
-        }
-
-        // ════════════════════════════════════════════
-        // PROGRESS BAR
-        // ════════════════════════════════════════════
-        
+        // Progress bar on scroll
         window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            const progress = document.getElementById('progress');
-            
-            if (progress) {
-                progress.style.width = scrollPercent + '%';
-            }
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            const progressBar = document.querySelector('.progress-bar');
+            if (progressBar) progressBar.style.width = scrolled + '%';
         });
 
-        // ════════════════════════════════════════════
-        // LANGUAGE SELECTOR
-        // ════════════════════════════════════════════
-        
-        const languages = {
-            'en': { name: 'English', flag: '🇺🇸' },
-            'hi': { name: 'हिंदी', flag: '🇮🇳' },
-            'es': { name: 'Español', flag: '🇪🇸' },
-            'fr': { name: 'Français', flag: '🇫🇷' }
-        };
-
-        let currentLang = 'en';
-
-        function toggleLanguage() {
-            const langs = Object.keys(languages);
-            const currentIndex = langs.indexOf(currentLang);
-            currentLang = langs[(currentIndex + 1) % langs.length];
-            document.getElementById('currentLang').textContent = currentLang.toUpperCase();
-            
-            // Here you can add Google Translate or i18n logic
-            console.log('Language changed to:', currentLang);
-        }
-
-        // ════════════════════════════════════════════
-        // PAGE LOAD ANIMATION
-        // ════════════════════════════════════════════
-        
-        window.addEventListener('load', () => {
-            console.log('✅ Pragati Sahayak website loaded successfully!');
-        });
-
-        // ════════════════════════════════════════════
-        // SMOOTH SCROLL
-        // ════════════════════════════════════════════
-        
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -722,27 +636,7 @@
             });
         });
 
-        // ════════════════════════════════════════════
-        // NAVBAR SCROLL EFFECT
-        // ════════════════════════════════════════════
-        
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('nav');
-            if (nav) {
-                if (window.scrollY > 50) {
-                    nav.classList.add('shadow-md');
-                } else {
-                    nav.classList.remove('shadow-md');
-                }
-            }
-        });
-
-        // ════════════════════════════════════════════
-        // MOBILE MENU (Optional)
-        // ════════════════════════════════════════════
-        
-        // Add more interactivity as needed
-        console.log('🚀 Pragati Sahayak - Digital Growth Partners');
+        console.log('✅ Pragati Sahayak website loaded!');
     </script>
 </body>
 </html>
