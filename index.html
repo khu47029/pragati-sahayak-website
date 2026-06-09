@@ -3861,5 +3861,19 @@ window.innerHeight
 });
 
     </script>
+    <div id="pragati-chatbot-widget" style="position: fixed; bottom: 20px; right: 20px; width: 400px; height: 600px; border-radius: 12px; box-shadow: 0 5px 40px rgba(0,0,0,0.16); z-index: 9999; overflow: hidden;">
+  <iframe src="https://interfaces.zapier.com/interfaces/cmq4yitv30002lo89f86oets0" style="width: 100%; height: 100%; border: none; border-radius: 12px;"></iframe>
+</div>
+
+<script>
+  // Mobile responsive adjustment
+  if (window.innerWidth < 768) {
+    document.getElementById('pragati-chatbot-widget').style.width = '100%';
+    document.getElementById('pragati-chatbot-widget').style.height = '100vh';
+    document.getElementById('pragati-chatbot-widget').style.bottom = '0';
+    document.getElementById('pragati-chatbot-widget').style.right = '0';
+    document.getElementById('pragati-chatbot-widget').style.borderRadius = '0';
+  }
+</script>
 </body>
 </html>
